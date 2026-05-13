@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  neo4j:
+    image: neo4j:5.20.0
+    container_name: chaturdrishti_neo4j
+    ports:
+      - "7474:7474"   # Browser UI
+      - "7687:7687"   # Bolt protocol (Python driver)
+    environment:
+      - NEO4J_AUTH=neo4j/chaturdrishti123
+      - NEO4J_PLUGINS=["apoc"]
+    volumes:
+    
+      - ./data/neo4j:/data
+      - ./logs/neo4j:/logs
+    restart: unless-stopped
+
+  redis:
+    image: redis:7.2-alpine
+    container_name: chaturdrishti_redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped

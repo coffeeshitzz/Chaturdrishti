@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.egg
+
+# Environment
+.env
+*.env.local
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Docker
+docker/data/
+
+# Neo4j local data
+neo4j/data/
+neo4j/logs/
+
+# Logs
+*.log
+
+cache/
